@@ -101,18 +101,18 @@ set(gca, 'FontSize', 16);
 xy_dat = rand(100,2);
 %plot the data in the xy plane.
 figure;
-plot(xy_dat(:,1), xy_dat(:,2), '.', 'MarkerSize', 20);
+plot(xy_dat(:,1), xy_dat(:,2), '.', 'MarkerSize', 40);
 xlabel('x', 'FontSize', 24);
 ylabel('y', 'FontSize', 24);
 set(gca, 'FontSize', 16);
 
 %now imagine there is some fluorescence data corresponding to the same
 %cells
-fluor = rand(100,2);
+fluor = rand(100,1);
 
 % plot the data in the xy plane but color code the data by the fluorescnece
 % values. Hint: see the scatter command
 hold on;
-dist = sqrt(sum(fluor.*fluor,2));
-scatter(fluor(:,1), fluor(:,2), 24, dist, 'filled')
+fluor = rand(100,1);
+scatter(xy_dat(:,1), xy_dat(:,2), 24, fluor, 'filled')
 legend({'xy_dat', 'fluor'}, 'FontSize', 24)
